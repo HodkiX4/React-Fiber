@@ -22,6 +22,3 @@ A simple chat application built using the **Fiber** web framework in Go for the 
 - Go (Golang)
 - Fiber (Express-style Go web framework)
 - (Coming soon) Gorilla WebSocket
-
-## 📂 Project Structure
-
