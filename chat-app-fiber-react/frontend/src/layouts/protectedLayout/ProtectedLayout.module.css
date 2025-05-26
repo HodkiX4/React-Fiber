@@ -1,0 +1,11 @@
+.main {
+  display: flex;
+  flex-grow: 1; /* Allow main to grow and fill available space */
+  overflow: hidden; /* Prevent overflow */
+  height: calc(100dvh - 60px);
+}
+
+.outlet {
+  background-color: var(--gray-600);
+  width: 60%;
+}

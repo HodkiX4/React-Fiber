@@ -1,0 +1,125 @@
+.sidebar {
+  background-color: var(--gray-900);
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-sm);
+}
+
+.serverName {
+  font-weight: bold;
+  font-size: 1rem;
+  padding-bottom: var(--space-sm);
+}
+
+.sectionTitle {
+  font-size: var(--space-sm);
+  color: var(--gray-200);
+  margin-bottom: var(--space-xs);
+  text-transform: uppercase;
+}
+
+.channelList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.channel {
+  padding: var(--space-xxs) var(--space-xs);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--gray-200);
+  transition: background 0.2s;
+}
+
+.channel:hover {
+  background-color: var(--gray-500);
+}
+
+.active {
+  background-color: var(--gray-400);
+  color: white;
+}
+
+.currentUser {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  padding: var(--space-xs);
+  border-top: 1px solid var(--gray-900);
+}
+
+.userIndicator {
+  width: 10px;
+  height: 10px;
+  background-color: #43b581;
+  border-radius: var(--radius-round);
+  margin-right: var(--space-sm);
+}
+
+.username {
+  font-size: .9rem;
+}
+
+.createForm {
+  display: flex;
+  padding: 10px;
+  gap: 6px;
+}
+
+.input {
+  flex: 1;
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+  background-color: #2f3136;
+  color: white;
+}
+
+.openButton {
+  align-self: flex-end;
+}
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background: var(--bg-color);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  width: 32em;
+  max-width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modalForm {
+  padding: var(--space-lg) var(--space-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gap-md);
+}
+
+.cancelButton {
+  background: var(--error-color);
+}
+
+.createButton {
+  background: var(--success-color);
+}

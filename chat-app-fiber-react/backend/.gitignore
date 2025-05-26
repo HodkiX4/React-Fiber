@@ -1,0 +1,27 @@
+# Go build files
+*.exe
+*.out
+*.test
+
+# Binaries
+bin/
+build/
+
+# Dependency directories
+vendor/
+
+# Environment files
+.env
+.env.*
+
+# IDE / Editor configs
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db

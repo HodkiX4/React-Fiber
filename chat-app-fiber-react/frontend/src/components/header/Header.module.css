@@ -1,0 +1,72 @@
+.header {
+  height: 60px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--gap-md);
+  background-color: var(--gray-900);
+  border-bottom: 1px solid var(--gray-600);
+}
+
+.icon {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.dropdown {
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  background: var(--gray-700);
+  border: 1px solid var(--gray-200);
+  padding: var(--space-xs);
+  border-radius: var(--radius-sm);
+  z-index: 10;
+  min-width: 200px;
+  p {
+    background-color: var(--gray-600);
+    padding: var(--space-xs);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    span {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.request {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xxs);
+}
+
+.request button {
+  margin-left: var(--space-md);
+}
+
+.toggle {
+  margin-bottom: var(--space-sm);
+  font-size: 0.9rem;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username {
+  font-weight: 500;
+  color: var(--gray-100);
+}

@@ -1,0 +1,221 @@
+/* Reset & Box Model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Default Theme (Dark Mode) === */
+:root {
+  --bg-color: #16181e; /* Very dark background */
+  --text-color: #ffffff; /* White text */
+  --primary-color: #5865f2; /* Discord bluish-purple */
+  --secondary-color: #23272a; /* Dark sidebar/background */
+  --accent-color: #3ba55d; /* Green accent, like Discord's "Online" */
+
+  /* Feedback colors */
+  --success-color: #3ba55d; /* Discord-like green */
+  --error-color: #ed4245;   /* Bright red */
+  --warning-color: #faa61a; /* Alert yellow */
+
+  /* Grayscale tones (dark variants) */
+  --gray-100: #e3e5e8;
+  --gray-200: #b9bbbe;
+  --gray-300: #72767d;
+  --gray-400: #4f545c;
+  --gray-500: #36393f;
+  --gray-600: #2f3136;
+  --gray-700: #202225;
+  --gray-800: #18191c;
+  --gray-900: #121416;
+
+  /* Shadow */
+  --shadow: rgba(0, 0, 0, 0.6);
+  
+  /* Spacing (Margins & Paddings) */
+  --space-xxs: 0.25em; /* 4px */
+  --space-xs:  0.5em;  /* 8px */
+  --space-sm:  0.75em; /* 12px */
+  --space-md:  1em;    /* 16px */
+  --space-lg:  1.5em;  /* 24px */
+  --space-xl:  2em;    /* 32px */
+  --space-xxl: 3em;    /* 48px */
+  
+  /* Gaps (for flex/grid) */
+  --gap-xxs: 0.25em;
+  --gap-xs:  0.5em;
+  --gap-sm:  0.75em;
+  --gap-md:  1em;
+  --gap-lg:  1.5em;
+  --gap-xl:  2em;
+  --gap-xxl: 3em;
+
+  /* Border Radius */
+  --radius-sm:  0.25em; /* 4px */
+  --radius-md:  0.5em;  /* 8px */
+  --radius-lg:  1em;    /* 16px */
+  --radius-xl:  1.5em;  /* 24px */
+  --radius-round: 50%; /* Fully rounded */
+
+}
+
+/* === Light Mode Overrides === */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #f2f3f5; /* Light background */
+    --text-color: #1e1f22; /* Dark text */
+    --primary-color: #5865f2; /* Keep branding consistent */
+    --secondary-color: #ffffff; /* White cards, sidebars */
+    --accent-color: #3ba55d; /* Matching green */
+
+    /* Feedback colors */
+    --success-color: #2ecc71; /* Slightly lighter green */
+    --error-color: #e74c3c;   /* Bright but softer red */
+    --warning-color: #f39c12; /* A vibrant yellow-orange */
+
+    /* Grayscale tones (light variants) */
+    --gray-100: #ffffff;
+    --gray-200: #f7f7f8;
+    --gray-300: #e0e0e0;
+    --gray-400: #c2c2c2;
+    --gray-500: #a0a0a0;
+    --gray-600: #808080;
+    --gray-700: #606060;
+    --gray-800: #3c3c3c;
+    --gray-900: #1e1f22;
+  }
+}
+
+/* Custom scrollbar for Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--text-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--gray-800);
+}
+
+/* === Global Styles === */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+}
+
+/*
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+*/
+
+.toaster {
+  color: var(--text-color) !important;
+  background-color: var(--gray-900) !important;
+  border-radius: var(--radius-md)!important;
+  padding: var(--space-sm) var(--space-md) !important;
+}
+
+.toaster.error-toast svg {
+  font-size: 1.6rem !important;
+  color: var(--error-color) !important;        
+}
+
+.toaster.success-toast svg {
+  font-size: 1.6rem !important;
+  color: var(--success-color) !important;        
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--primary-color);
+}
+
+h1 { font-size: 2em; } /* 32px */
+h2 { font-size: 1.75em; } /* 28px */
+h3 { font-size: 1.5em; } /* 24px */
+h4 { font-size: 1.25em; } /* 20px */
+h5 { font-size: 1.125em; } /* 18px */
+h6 { font-size: 1em; } /* 16px */
+
+p {
+  font-size: 1em;
+  color: var(--text-color);
+  margin-bottom: var(--space-md);
+}
+
+/* Links */
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 250ms ease-in-out;
+}
+
+a.active {
+  color: var(--primary-color);
+  pointer-events: none;
+}
+
+button, .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  padding: var(--space-xs) var(--space-sm);
+  font-weight: bold;
+  border: none;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+ul, ol {
+  padding-left: var(--space-lg);
+}
+
+li {
+  margin-bottom: var(--space-xs);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--gray-700);
+}
+
+.btn-success {
+  background-color: var(--success-color);
+}
+
+.btn-error {
+  background-color: var(--error-color);
+}
+
+.btn-warning {
+  background-color: var(--warning-color);
+}
+
+
